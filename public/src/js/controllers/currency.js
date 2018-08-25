@@ -20,10 +20,10 @@ angular.module('insight.currency').controller('CurrencyController',
 
         if (this.symbol === 'USD') {
           response = _roundFloat((value * this.factor), 2);
-        } else if (this.symbol === 'mGBX') {
+        } else if (this.symbol === 'mGOA') {
           this.factor = 1000;
           response = _roundFloat((value * this.factor), 5);
-        } else if (this.symbol === 'uGBX') {
+        } else if (this.symbol === 'uGOA') {
           this.factor = 1000000;
           response = _roundFloat((value * this.factor), 2);
         } else {
@@ -47,9 +47,9 @@ angular.module('insight.currency').controller('CurrencyController',
         Currency.get({}, function(res) {
           $rootScope.currency.factor = $rootScope.currency.bitstamp = res.data.bitstamp;
         });
-      } else if (currency === 'mGBX') {
+      } else if (currency === 'mGOA') {
         $rootScope.currency.factor = 1000;
-      } else if (currency === 'uGBX') {
+      } else if (currency === 'uGOA') {
         $rootScope.currency.factor = 1000000;
       } else {
         $rootScope.currency.factor = 1;
